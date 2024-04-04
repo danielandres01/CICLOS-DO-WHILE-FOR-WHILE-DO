@@ -1,33 +1,31 @@
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese un número natural: ");
-        int numeroIngresado = scanner.nextInt();
-
-        System.out.println("Utilizando el ciclo while:");
-        int numeroNatural1 = 1;
-        while (numeroNatural1 <= numeroIngresado) {
-            int cuadrado = numeroNatural1 * numeroNatural1;
-            System.out.println(numeroNatural1 + " * " + numeroNatural1 + " = " + cuadrado);
-            numeroNatural1++;
+        Scanner entrada= new Scanner(System.in);
+        int numero =0, n ;
+        int i=0;
+        n=(int)(Math.random()*100);
+        System.out.println(n);
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("bievenido a nuestro juego para adivinar el numero aleatorio.");
+        System.out.println("recuerda 1. que se generará un numero aleatoreo del 0 al 100.");
+        System.out.println("2. el programa será identificara cuantos intentos has hecho.");
+        System.out.println("3. el juego acaba cuando adivines el numero.");
+        System.out.println("------------------------------------------------------------------------");
+        while (numero != n){
+            System.out.println("porfavor ingrese el numero que creas que es");
+            numero=entrada.nextInt();
+            if (numero==n){
+                System.out.println("usted escogio el numero correcto. "+numero);
+            } else if (numero>n) {
+                System.out.println("su numero es mayor al numero generado. "+numero);
+            }else {
+                System.out.println("su numero es menor al numero generado. "+numero);
+            }
+            i++;
         }
-
-        System.out.println("\n Utilizando el ciclo for:");
-        for (int numeroNatural2 = 1; numeroNatural2 <= numeroIngresado; numeroNatural2++) {
-            int cuadrado = numeroNatural2 * numeroNatural2;
-            System.out.println(numeroNatural2 + " * " + numeroNatural2 + " = " + cuadrado);
-        }
-
-        System.out.println("\n Utilizando el ciclo do-while:");
-        int numeroNatural3 = 1;
-        do {
-            int cuadrado = numeroNatural3 * numeroNatural3;
-            System.out.println(numeroNatural3 + " * " + numeroNatural3 + " = " + cuadrado);
-            numeroNatural3++;
-        } while (numeroNatural3 <= numeroIngresado);
-
-        scanner.close();
+        System.out.println("el numero de veces que lo intento fue. "+i);
     }
 }
